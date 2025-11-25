@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bankmanagementsystem-deployment
+  namespace: bankmanagementsystem-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bankmanagementsystem
+  template:
+    metadata:
+      labels:
+        app: bankmanagementsystem
+    spec:
+      containers:
+      - name: bankmanagementsystem-container
+        image: bankmanagementsystem-image
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8100
