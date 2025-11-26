@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bankmanagementsystem-container
-        image: bankmanagementsystem-image
+        image: bankservice-image
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8100

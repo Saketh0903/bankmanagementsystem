@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        APP_NAME = "courseservice"
+        APP_NAME = "bankmanagementsystem"
         APP_NAMESPACE = "${APP_NAME}-ns"
-        IMAGE_NAME = "${APP_NAME}-image"
+        IMAGE_NAME = "bankservice-image"
         IMAGE_TAG = "latest"
         APP_PORT = 8100
         NODE_PORT = 30081
@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Saketh0903/Course-service.git'
+                git branch: 'main', url: 'https://github.com/Saketh0903/bankmanagementsystem.git'
             }
         }
         stage('Build') {
